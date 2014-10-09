@@ -1,6 +1,11 @@
 #include "windowMain.h"
 
 #define WNDCLASSNAME "wndclass"
+#define WINDOW_HEIGHT 800
+#define WINDOW_WIDTH 1200
+
+#define WINDOW_START_X 100
+#define WINDOW_START_Y 100
 
 HDC hdc;
 HWND hwnd;
@@ -50,8 +55,8 @@ int WINAPI WinMain(HINSTANCE hinstance,
 		WNDCLASSNAME,
 		"Window",
 		WS_OVERLAPPEDWINDOW,
-		0, 0,
-		300, 300,
+		WINDOW_START_X, WINDOW_START_Y,
+		WINDOW_WIDTH, WINDOW_HEIGHT,
 		NULL,
 		NULL,
 		hinstance,
