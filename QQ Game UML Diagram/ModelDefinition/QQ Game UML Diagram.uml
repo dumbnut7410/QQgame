@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6270234c-07be-4a6f-ab76-7be84d19b00c"
+  name="QQ Game UML Diagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="3b90c829-1c34-464a-8dd2-90613e4b6cc6"
+        name="Creatures"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="6e894a1e-f342-4171-88d2-715d94c6fde4"
+            name="int Health"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="a15b305b-e314-47db-a167-a27ece073330"
+            name="void takeDamage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="44961c25-4047-4414-9adb-78e6ec9f671f"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="edcf5241-e2c9-4d19-8809-0aef85713bf2"
+            name="void gainHealth"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="085098a4-be5c-4652-8fb0-35fe62bb9a59"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+        name="Item"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="de85a23c-f2f5-4ef8-82ee-7af56b30ca61"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="aed906c6-bd69-4a30-81b2-42c8bf75d48d"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b7d21466-c43f-49bf-a1cd-a115ba0a09bb"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+        name="Player"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d0b5d5e1-19ca-410a-906f-e653bee2737f">
+            <interfaceMoniker
+              Id="3b90c829-1c34-464a-8dd2-90613e4b6cc6"
+              LastKnownName="Creatures"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="f52c66de-f6d0-4c7e-95d5-26e91b6b452b">
+            <interfaceMoniker
+              Id="093179f6-7c78-49b5-b8e8-d0196f124e18"
+              LastKnownName="Stat Holder"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="38ae2079-a918-496a-ba8d-dc27b84d344c">
+            <interfaceMoniker
+              Id="784273a6-3b2c-44f6-a207-30f74e80a32e"
+              LastKnownName="Attackable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="53e3f586-5b4f-41d5-95aa-a25dad837adc">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="1d523943-04a9-47b6-a5de-606d424197bd"
+            name="double Money"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="142f55d1-7453-4a1f-bb82-29b5fef5d454"
+            name="void gainMoney"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a6ec6a1c-4f4f-4c17-b69b-02ad7760f7c4"
+                  name="double"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e8119fdb-372b-4237-8cc9-04de24f2b1de"
+            name="void lostMoney"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3394fec7-df18-4a25-872d-d4a0e21fbea3"
+                  name="double"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="150587d8-bb68-46e1-afa2-1e50136a3814"
+            name="void takeDamage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="58438dbd-571c-483b-bd7a-abf2c9b15a1b"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3d29316f-4478-40aa-9126-caadf197e240"
+            name="void gainHealth"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d5f86a35-9658-4767-b97e-cb7ca6396620"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="79048d99-a08c-4d22-9184-7d902d9a4e17"
+            name="void attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4596717b-3f9b-4c34-9dc7-9a0fb9dc0187"
+                  name="Attackable attacker"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d80e153-e7bd-4292-92d8-c3146888bc44"
+                  name="Attackable target)"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1501b1c1-f22a-4025-894a-44d8a4eccfc5"
+        name="Mob"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="69b0981a-13d9-48fe-abea-ccafc1624807">
+            <interfaceMoniker
+              Id="3b90c829-1c34-464a-8dd2-90613e4b6cc6"
+              LastKnownName="Creatures"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="d28d1412-5e5f-4cdc-a030-f717ea0585a7">
+            <interfaceMoniker
+              Id="093179f6-7c78-49b5-b8e8-d0196f124e18"
+              LastKnownName="Stat Holder"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="c8f5e3bb-7474-4be1-aa79-e03b16c2e756">
+            <interfaceMoniker
+              Id="784273a6-3b2c-44f6-a207-30f74e80a32e"
+              LastKnownName="Attackable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="07aaed8c-78b7-4b6b-86a7-5c1f73f96af2">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b3863677-7b1c-4c8a-84ef-a52de88ef1ff"
+            name="void takeDamage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ce88098e-8652-4b05-ad09-5206527caf1c"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7ae055a7-7945-4a8e-956e-674f1f20c89e"
+            name="void gainHealth"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c5eddc50-3ddb-4cd0-aeb2-1d1377aa9adb"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="137254eb-bb04-467c-b5ea-ac5261380298"
+            name="void attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0f000217-5952-49a2-b5b4-b350a4e34ae9"
+                  name="Attackable attacker"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52ca5cc1-d176-432f-bed0-bb00a695606b"
+                  name="Attackable target)"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4fae315f-e9b0-4b24-a732-de7c064ab38d"
+        name="Marksman"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="3a571067-83f0-497e-bc32-cb2ed0c3cf81"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+              LastKnownName="Player"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="882ef6ef-f49f-4994-b15f-7db9f31c030c"
+        name="Mage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="15381c2d-d7f2-4944-a785-4b2ad5115413"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+              LastKnownName="Player"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b4d9b825-b0ef-429a-8c36-2b08b91830f6"
+        name="Rogue"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="de21adc3-4fe1-4c34-a035-54b374d633ec"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+              LastKnownName="Player"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6ed067db-0612-4b80-b8a7-89473d00e40b"
+        name="Warrior"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="17cdaae7-c028-4da6-a4a6-6f28274184c7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+              LastKnownName="Player"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8e39625d-1a4c-4bd2-a4b5-8bd6f18d8203"
+        name="Cleric"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="1549152c-058a-4e38-abf9-acbceb827cc9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1427b2fb-cd5a-49d5-be05-692b03ec0263"
+              LastKnownName="Player"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+        name="Renderable"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="7828fae4-cb2e-4443-852d-012c8bf3e471"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0a0723a5-b166-4d1e-8df3-a85c2f60f087"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e886112e-3e5d-46ed-b6c7-c34c72c195a1"
+        name="Main Hand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="e4bafd63-f657-4b9d-aafb-6c02d182eb73">
+            <interfaceMoniker
+              Id="784273a6-3b2c-44f6-a207-30f74e80a32e"
+              LastKnownName="Attackable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="e0d5e326-a654-45c4-a444-e54e919c7dbd">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="9bb74c9d-4e6c-43cc-b90a-14221e1db347">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="45a7f333-63d2-4341-96b3-069776fbaa23"
+            name="void attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="47f1cc2a-7789-4762-9008-a487f3027910"
+                  name="Attackable attacker"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="210f82a8-ca1f-4a4f-a886-7e0e3af65499"
+                  name="Attackable target"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3a138a0b-2b81-4ca5-a968-1ab6c917b732"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="564ad3ff-3133-48ef-aa3d-e2308c436e69"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d7d535f2-6063-4ce6-aab2-931f32a68ebd"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ef0c7fba-2867-4d9c-9956-bd417b31e8dd"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6a12ab65-da6e-48b9-8413-5b4318e83812"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="316575f2-0216-4aef-93b3-9b2e4b7b81d7"
+        name="Off Hand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c89695cb-ed19-4443-86b9-e3be9fca2fa4">
+            <interfaceMoniker
+              Id="784273a6-3b2c-44f6-a207-30f74e80a32e"
+              LastKnownName="Attackable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="c7c75b57-112a-4a27-a2c6-5bfbf29a8d2e">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="698b9c7c-52be-45ab-9692-40cb8dccc889">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0145a76a-03d1-438b-a077-d08c1c0de33f"
+            name="void attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6b535d05-c0ad-49ae-ba14-9ea624337d69"
+                  name="Attackable attacker"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="aacd7577-0530-45b0-9c80-01da8c5f31e3"
+                  name="Attackable target"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a9ff113a-dc73-4a8d-8c6e-894337bdebe3"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b366b547-a541-4823-a465-d500431b0c7c"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4228f1b3-8d7d-4f75-8896-72693bb65a4c"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9501954b-cccd-423e-b9e0-c3f0025c5c91"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3f060fd9-4b00-4182-8b5a-201ad0f75dfe"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="daa4d94c-6973-4fcd-ba05-4740911853f7"
+        name="Legs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="75c2f989-438c-470d-b2dd-0a804677e669">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="0ceb941f-0e6e-489f-aad2-4be164f2cff0">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a959d07c-4320-4f46-99ec-9cddc4b89b55"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0d0f918b-a551-41bc-a535-820d9c28c388"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="49c17e78-6622-42b5-a38d-986845cbd923"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fc8eb862-c298-4c93-a176-635318208f56"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0bc56899-3c9b-44b8-8425-6f548ac2bf8e"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="61bc30da-df32-462a-95a1-6a4caa87ed81"
+        name="Feet"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="a63390ec-92ad-48bf-9d60-8c4b0237a9f4">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="7e1178bf-313d-4528-b947-5ead0e1f9ad9">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="52f91596-461f-479b-af80-4e7ef28142b8"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c7fae726-af47-474c-beab-de1459b9909a"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c770bbdc-13a4-464e-a98c-18261ef1ece7"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="63149dad-204f-4d64-b9ac-b19011be458e"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="766f8743-0362-4d02-a7f5-ea9fe5ea577b"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0d2721ce-c7df-4fd5-8b81-1c71f0c20519"
+        name="Chest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="491950d0-64ed-4cca-bf92-3ea743a22f51">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="dedb4948-6016-4323-a1f8-4f8af798fdd1">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="20a0ad1d-b135-4896-ba51-14b381466f0d"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="487470e2-fee1-444b-b7e1-ec6b3489c6ac"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cd388d3c-0c9d-4f2d-8807-d7d6e6cc78f6"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b8414b61-092b-45eb-9b85-9487dd0dbe73"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="554c63b2-c1e4-4b09-a91f-defd3d1624f2"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="61c8f3b3-9fa9-46ae-804f-f9413e65bf70"
+        name="Glove"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d797fa25-2ada-4b02-8454-b001112e6690">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="9220457b-4cb9-405e-9d7a-844ee850b807">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2082d908-adc6-4a82-a787-7f46f37cdf99"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8d805c88-67c5-499d-b17f-fc413eb4b2c8"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0087479b-c394-4f94-a3e6-cc5a492f19bf"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ff28cfc5-5f1a-4abb-a3e9-993b6ebf16ce"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1897548b-b9c2-4582-8685-60542172c9af"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c9d8b520-9cc2-4f76-9796-2f1c5ba8a54f"
+        name="Hat"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="4c320365-7adb-4a8a-b7da-7aa3b6b88813">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="2ad92aea-d563-40c9-b97b-0de7bc72ce75">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="04909228-938e-42ac-9360-63059a7f1d67"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5434c91f-1c3e-4264-8a4e-e2de5bb6443f"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fd43b0b2-460d-499e-bf91-0f636722d3bd"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="196400c8-7fc9-47c2-b0e7-164a8abd6718"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6cac7de2-306f-4043-9b75-defcc77aaa28"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a8a1dd5e-685e-47cf-b355-bfac1be6f38e"
+        name="Ring"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="eae6ef78-ae78-4bb8-b82c-fcc28f874680">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="608e04da-0fc7-4332-8424-4a83ed1d99f2">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2dc1db64-b80c-4c87-baf4-5e498bcb6d20"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c7480f33-2e4a-4949-9b7b-ac4523067454"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="27e2de0b-68da-490e-aa61-6b2d3964f162"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ec12ae7c-6be4-4d4e-b7af-b789dfca04d3"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dfb5a43c-3b2c-4211-b7ae-7123f87d03a0"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5c42b86c-9827-4cc4-9245-d71584584d29"
+        name="Belt"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="04e8addf-2eb3-46c0-9ec5-2f76c19690fc">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="b69cae0f-5859-4978-a682-63936b4b8433">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4e38ceda-337d-4d52-8284-c36c1bf3946e"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6d888cb0-12c2-45c5-ba4a-aac9f813e515"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="84e4171e-585c-40e9-81f9-8b34051957b3"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fbf48697-cc1f-4b9f-95d8-6a1c047c4935"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d7a87963-5a5e-4d6e-ba86-847250fdc23d"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="53bc87c6-f0b0-4c36-9579-bdcd61621f2e"
+        name="Neck"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d4cfa51b-b20d-4b43-b94e-9ccc9ade8b19">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="8e253030-89b8-45f7-953f-74f51176848e">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b870afee-6952-4fe7-9e8e-6c48474a2f12"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b187e1f0-5306-41b4-8b55-817bd037fad6"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="53663010-2902-4325-8701-d2e08f449acc"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5bac347f-50a6-44f0-9153-e8d7933a5260"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="58f22f80-7256-44d5-924f-82e570616cea"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="be013984-05ca-4d93-ad22-630e88437554"
+        name="Face"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7589871b-5c5c-41f1-97f0-dfa1bfbd6149">
+            <interfaceMoniker
+              Id="1ecc0485-3d96-456f-9255-f3fecaa6d860"
+              LastKnownName="Renderable"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="a846358e-18e8-40b1-abc8-6fad0e05463e">
+            <interfaceMoniker
+              Id="58a90916-f258-47f2-975a-3a94aeb854ea"
+              LastKnownName="Item"
+              LastKnownLocation="QQ Game UML Diagram.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="da9e2c6f-7490-436f-8163-20fb21c455e8"
+            name="void render"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cd267ef9-eb72-447d-bacc-9e1d65ce80f9"
+            name="void tick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ba40d628-24e9-4a8c-a058-f8ad399a50bd"
+            name="void pickUp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dd69958d-ac44-4b3f-b8a6-34acc6cecbd6"
+            name="void drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0098f110-086f-4e8f-afae-a5290f8d66c6"
+            name="void equip"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="093179f6-7c78-49b5-b8e8-d0196f124e18"
+        name="Stat Holder"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="f6fec41f-2b4a-4c84-b965-b1dd9e996ab2"
+            name="int Agility"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="33384bac-8e10-46e9-8ab0-e7d3c1f76a13"
+            name="int Inteligence"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="06d77922-d40b-4f81-b8bd-729696f59727"
+            name="int Luck"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8a3d4656-991c-4375-974c-f24f5d1cb3e6"
+            name="int Strength"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="784273a6-3b2c-44f6-a207-30f74e80a32e"
+        name="Attackable"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="28f80332-09bd-4c07-882f-eb13d280d1eb"
+            name="void attack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5fb65f89-8a10-4755-b162-88c3e967cefd"
+                  name="Attackable attacker"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="59889796-ae0f-4ccd-97f9-d05c9e8f6f45"
+                  name="Attackable target"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

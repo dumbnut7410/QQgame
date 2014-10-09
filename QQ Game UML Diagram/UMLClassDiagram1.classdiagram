@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="978b40ca-bf0e-47cd-9e43-9c8eeec36d5f" name="UMLClassDiagram1" linkedPackageId="b650225f-5550-4f87-87b9-0ed6a4a9fd8e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f456f2c1-ba90-406b-9916-25faa4fc0ea8">
+      <profileInstance Id="e17ffe78-0a60-44c9-843f-0d520491027d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c45cedba-1d17-4909-8a1f-7e0840ed2d6e">
+      <profileInstance Id="42c24a11-9221-400b-975e-dfa5f2c84ee0" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="fe959a13-d593-4990-9065-ea96ac9b7cdb" name="Creatures" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b90c829-1c34-464a-8dd2-90613e4b6cc6" />
+        <ownedAttributes>
+          <property Id="b7e3b7f1-251c-4cd3-9c13-de5fb2fe6605" name="int Health" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6e894a1e-f342-4171-88d2-715d94c6fde4" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="bbb5340e-2360-4a9f-b363-3f3a8c166f75" name="void takeDamage" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a15b305b-e314-47db-a167-a27ece073330" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2f11b596-f018-4b44-aee1-509ae34af202" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="44961c25-4047-4414-9adb-78e6ec9f671f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fec76b0a-f4e1-4d40-bf3b-b5a557146b56" name="void gainHealth" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="edcf5241-e2c9-4d19-8809-0aef85713bf2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dcf5ae4e-f566-4213-a210-32bf37fba13d" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="085098a4-be5c-4652-8fb0-35fe62bb9a59" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" name="Item" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="58a90916-f258-47f2-975a-3a94aeb854ea" />
+        <ownedOperations>
+          <operation Id="620614a1-d042-497e-9b5f-08c415478539" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="de85a23c-f2f5-4ef8-82ee-7af56b30ca61" />
+          </operation>
+          <operation Id="dfb95cff-2dd0-43af-b335-ec01934119a7" name="void drop" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="aed906c6-bd69-4a30-81b2-42c8bf75d48d" />
+          </operation>
+          <operation Id="a7643686-7fb5-4ff0-b283-f79bfad05e9f" name="void equip" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b7d21466-c43f-49bf-a1cd-a115ba0a09bb" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1427b2fb-cd5a-49d5-be05-692b03ec0263" />
+        <suppliersInternal>
+          <interfaceRealization Id="5fc5bb1c-c241-4d91-ab6f-18c87380d1d6">
+            <interfaceMoniker Id="fe959a13-d593-4990-9065-ea96ac9b7cdb" LastKnownName="Creatures" />
+            <elementDefinition Id="d0b5d5e1-19ca-410a-906f-e653bee2737f" />
+          </interfaceRealization>
+          <interfaceRealization Id="1ebf3e35-b066-4369-9786-4b0ba05389b6">
+            <interfaceMoniker Id="6de110f3-e271-4fe9-be09-c938530c1489" LastKnownName="Stat Holder" />
+            <elementDefinition Id="f52c66de-f6d0-4c7e-95d5-26e91b6b452b" />
+          </interfaceRealization>
+          <interfaceRealization Id="dc321ab2-1168-4703-9580-5511a2388de3">
+            <interfaceMoniker Id="554f5a12-c21b-4fdc-93d1-51fa1590684e" LastKnownName="Attackable" />
+            <elementDefinition Id="38ae2079-a918-496a-ba8d-dc27b84d344c" />
+          </interfaceRealization>
+          <dependency Id="7c62a4f2-86d2-4a51-953d-b069d86fecb5">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="53e3f586-5b4f-41d5-95aa-a25dad837adc" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="aee04db9-6785-4eb7-b395-0762e666ead2" name="double Money" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1d523943-04a9-47b6-a5de-606d424197bd" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="5ee0fe65-b5f7-48f2-91b6-7d877f08ea59" name="void gainMoney" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="142f55d1-7453-4a1f-bb82-29b5fef5d454" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a9350974-ad92-4266-9d72-f7b941f1a3cb" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="a6ec6a1c-4f4f-4c17-b69b-02ad7760f7c4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="695a1b49-0888-4fc1-9f8d-6e75aec5b130" name="void lostMoney" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e8119fdb-372b-4237-8cc9-04de24f2b1de" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3babec2c-39e8-4ab8-8873-42c33d3480a3" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="3394fec7-df18-4a25-872d-d4a0e21fbea3" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="49534d27-58e9-4556-a312-7be2bea74d25" name="void takeDamage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="150587d8-bb68-46e1-afa2-1e50136a3814" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c20efc2c-372b-431c-8df0-7672d11ca259" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="58438dbd-571c-483b-bd7a-abf2c9b15a1b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1c166857-3f2e-4e40-ab75-48882141d4e9" name="void gainHealth" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d29316f-4478-40aa-9126-caadf197e240" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="58ce988f-f0b4-4838-bd4b-ee30ed168288" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="d5f86a35-9658-4767-b97e-cb7ca6396620" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ff279cc9-032a-4adc-9665-5dda7c2a2ffd" name="void attack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79048d99-a08c-4d22-9184-7d902d9a4e17" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6ee34c29-e727-4b0c-ac3d-73d3c94e0891" name="Attackable attacker" direction="In" isUnique="false">
+                  <elementDefinition Id="4596717b-3f9b-4c34-9dc7-9a0fb9dc0187" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e5ba73a0-d447-49b7-9f2e-2f8182393775" name="Attackable target)" direction="In" isUnique="false">
+                  <elementDefinition Id="1d80e153-e7bd-4292-92d8-c3146888bc44" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a2a9f1d0-78ef-45a0-9988-710e4cd31f91" name="Mob" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1501b1c1-f22a-4025-894a-44d8a4eccfc5" />
+        <suppliersInternal>
+          <interfaceRealization Id="8ea9a5b8-eb78-4e97-96d8-7024c60c607c">
+            <interfaceMoniker Id="fe959a13-d593-4990-9065-ea96ac9b7cdb" LastKnownName="Creatures" />
+            <elementDefinition Id="69b0981a-13d9-48fe-abea-ccafc1624807" />
+          </interfaceRealization>
+          <interfaceRealization Id="945aeb56-2340-43e2-99f9-4ebfad38b6fe">
+            <interfaceMoniker Id="6de110f3-e271-4fe9-be09-c938530c1489" LastKnownName="Stat Holder" />
+            <elementDefinition Id="d28d1412-5e5f-4cdc-a030-f717ea0585a7" />
+          </interfaceRealization>
+          <interfaceRealization Id="cf894633-ad15-4fd7-9a26-2364c18814f8">
+            <interfaceMoniker Id="554f5a12-c21b-4fdc-93d1-51fa1590684e" LastKnownName="Attackable" />
+            <elementDefinition Id="c8f5e3bb-7474-4be1-aa79-e03b16c2e756" />
+          </interfaceRealization>
+          <dependency Id="792720db-239c-4629-b36b-4f4c1a0e741c">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="07aaed8c-78b7-4b6b-86a7-5c1f73f96af2" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="d5b5752e-17a4-4ecd-b89e-70bbe7900eb0" name="void takeDamage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b3863677-7b1c-4c8a-84ef-a52de88ef1ff" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="409bfd37-7af9-416c-972d-544c06295f8a" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="ce88098e-8652-4b05-ad09-5206527caf1c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bad35c3b-8822-42c2-b546-3827cce403b6" name="void gainHealth" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7ae055a7-7945-4a8e-956e-674f1f20c89e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1d12f87-5ea3-4889-92b1-883a1aa75d97" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="c5eddc50-3ddb-4cd0-aeb2-1d1377aa9adb" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="abbb011a-180e-4ba9-aada-e10f3e2cbab2" name="void attack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="137254eb-bb04-467c-b5ea-ac5261380298" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ee904f0c-e5fe-4fd0-9f4c-254a25feb93c" name="Attackable attacker" direction="In" isUnique="false">
+                  <elementDefinition Id="0f000217-5952-49a2-b5b4-b350a4e34ae9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6e582d0a-cd6f-4cc7-b748-376f6be66366" name="Attackable target)" direction="In" isUnique="false">
+                  <elementDefinition Id="52ca5cc1-d176-432f-bed0-bb00a695606b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="911a1896-c62a-4072-a69d-df852eb042eb" name="Marksman" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4fae315f-e9b0-4b24-a732-de7c064ab38d" />
+        <generalsInternal>
+          <generalization Id="66e53376-e2c5-4fb9-a4e5-c22ead2942d1" isSubstitutable="false">
+            <classMoniker Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" LastKnownName="Player" />
+            <elementDefinition Id="3a571067-83f0-497e-bc32-cb2ed0c3cf81" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="74b6d001-f71f-4c23-92fa-f171d8f3855c" name="Mage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="882ef6ef-f49f-4994-b15f-7db9f31c030c" />
+        <generalsInternal>
+          <generalization Id="4d9cb2bf-8678-4f1e-8cbc-64f3352f84a0" isSubstitutable="false">
+            <classMoniker Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" LastKnownName="Player" />
+            <elementDefinition Id="15381c2d-d7f2-4944-a785-4b2ad5115413" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d313f52f-0a35-4046-a6e6-f5c4022d0107" name="Rogue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b4d9b825-b0ef-429a-8c36-2b08b91830f6" />
+        <generalsInternal>
+          <generalization Id="3d6df8d9-465d-456e-aaa2-d6f2446b9c2f" isSubstitutable="false">
+            <classMoniker Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" LastKnownName="Player" />
+            <elementDefinition Id="de21adc3-4fe1-4c34-a035-54b374d633ec" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0fb7a036-a8ae-46d6-bbc1-260659ce4984" name="Warrior" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6ed067db-0612-4b80-b8a7-89473d00e40b" />
+        <generalsInternal>
+          <generalization Id="1616dc9d-036a-4268-a015-42612244d344" isSubstitutable="false">
+            <classMoniker Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" LastKnownName="Player" />
+            <elementDefinition Id="17cdaae7-c028-4da6-a4a6-6f28274184c7" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="44572172-6678-4f5d-bb3e-20524333949f" name="Cleric" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8e39625d-1a4c-4bd2-a4b5-8bd6f18d8203" />
+        <generalsInternal>
+          <generalization Id="288dede0-8075-4501-ab0d-2b140b8b9ae1" isSubstitutable="false">
+            <classMoniker Id="2f92beb8-4e17-4c06-932f-9286b2aac9ba" LastKnownName="Player" />
+            <elementDefinition Id="1549152c-058a-4e38-abf9-acbceb827cc9" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" name="Renderable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1ecc0485-3d96-456f-9255-f3fecaa6d860" />
+        <ownedOperations>
+          <operation Id="af828895-41d4-4fe7-bed5-3460f42cc35b" name="void render" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7828fae4-cb2e-4443-852d-012c8bf3e471" />
+          </operation>
+          <operation Id="e25296fc-e8b2-43ea-a6e1-3076768dbdd4" name="void tick" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0a0723a5-b166-4d1e-8df3-a85c2f60f087" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4a4dfd67-35b3-45a7-b8a4-df85c30c6b34" name="Main Hand" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e886112e-3e5d-46ed-b6c7-c34c72c195a1" />
+        <suppliersInternal>
+          <interfaceRealization Id="43eed921-ceb7-42ef-8733-5aebc9816eb0">
+            <interfaceMoniker Id="554f5a12-c21b-4fdc-93d1-51fa1590684e" LastKnownName="Attackable" />
+            <elementDefinition Id="e4bafd63-f657-4b9d-aafb-6c02d182eb73" />
+          </interfaceRealization>
+          <interfaceRealization Id="f24025aa-7848-4182-bab7-859fafb81dad">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="e0d5e326-a654-45c4-a444-e54e919c7dbd" />
+          </interfaceRealization>
+          <interfaceRealization Id="8b59099b-a731-497a-91d3-6fd9c7aa907a">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="9bb74c9d-4e6c-43cc-b90a-14221e1db347" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="e061b40e-7ba9-4fb8-aa90-6dacbf5bb345" name="void attack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="45a7f333-63d2-4341-96b3-069776fbaa23" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3fa495b0-40b7-4151-9a6c-cfafc1ec6e27" name="Attackable attacker" direction="In" isUnique="false">
+                  <elementDefinition Id="47f1cc2a-7789-4762-9008-a487f3027910" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6bb54488-adfa-486b-b24a-44da6ddb5660" name="Attackable target" direction="In" isUnique="false">
+                  <elementDefinition Id="210f82a8-ca1f-4a4f-a886-7e0e3af65499" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="69555fc7-989d-44f4-8461-08b408ddcf03" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a138a0b-2b81-4ca5-a968-1ab6c917b732" />
+          </operation>
+          <operation Id="91d538b6-0916-4954-a6b5-05d5bf3bc271" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="564ad3ff-3133-48ef-aa3d-e2308c436e69" />
+          </operation>
+          <operation Id="ec1411e8-ea67-4b4f-97c0-2fe0740c3c54" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d7d535f2-6063-4ce6-aab2-931f32a68ebd" />
+          </operation>
+          <operation Id="b465784e-ac79-4783-be29-b8a990f47d3e" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef0c7fba-2867-4d9c-9956-bd417b31e8dd" />
+          </operation>
+          <operation Id="1b205d9a-4161-4add-a96e-828653989d2a" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6a12ab65-da6e-48b9-8413-5b4318e83812" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e2a529f0-5773-4afd-bf33-2b8415818a55" name="Off Hand" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="316575f2-0216-4aef-93b3-9b2e4b7b81d7" />
+        <suppliersInternal>
+          <interfaceRealization Id="2968f199-00ee-4b31-8e5a-306dd9aab12a">
+            <interfaceMoniker Id="554f5a12-c21b-4fdc-93d1-51fa1590684e" LastKnownName="Attackable" />
+            <elementDefinition Id="c89695cb-ed19-4443-86b9-e3be9fca2fa4" />
+          </interfaceRealization>
+          <interfaceRealization Id="755b2b18-81a0-48ef-aa41-11db9d2208cb">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="c7c75b57-112a-4a27-a2c6-5bfbf29a8d2e" />
+          </interfaceRealization>
+          <interfaceRealization Id="a3fcfe4a-98ea-43b3-98c2-e91700075a5c">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="698b9c7c-52be-45ab-9692-40cb8dccc889" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="60669aa6-e6d7-44ef-a9a9-d2572abf9480" name="void attack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0145a76a-03d1-438b-a077-d08c1c0de33f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2aab9d40-1344-4341-9ce4-100c26c8c1dd" name="Attackable attacker" direction="In" isUnique="false">
+                  <elementDefinition Id="6b535d05-c0ad-49ae-ba14-9ea624337d69" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="269bd38b-7d88-4e15-94f4-06a73520de51" name="Attackable target" direction="In" isUnique="false">
+                  <elementDefinition Id="aacd7577-0530-45b0-9c80-01da8c5f31e3" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0bcd8f85-389f-4ad8-bbd7-7de73753bc58" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a9ff113a-dc73-4a8d-8c6e-894337bdebe3" />
+          </operation>
+          <operation Id="dce0293d-26bd-4028-af58-360eecadb428" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b366b547-a541-4823-a465-d500431b0c7c" />
+          </operation>
+          <operation Id="ab26b4d7-4d15-4c4a-a576-34584d867d36" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4228f1b3-8d7d-4f75-8896-72693bb65a4c" />
+          </operation>
+          <operation Id="fbd984ca-3b89-4ff3-930a-8e07aecd4a1d" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9501954b-cccd-423e-b9e0-c3f0025c5c91" />
+          </operation>
+          <operation Id="0f4b83e3-e403-4627-9010-c5f905a20359" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3f060fd9-4b00-4182-8b5a-201ad0f75dfe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1d830a02-d437-4943-914d-d3e51431c66c" name="Legs" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="daa4d94c-6973-4fcd-ba05-4740911853f7" />
+        <suppliersInternal>
+          <interfaceRealization Id="862cb474-2868-4b34-ac04-cbf7b1044ff8">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="75c2f989-438c-470d-b2dd-0a804677e669" />
+          </interfaceRealization>
+          <interfaceRealization Id="aeeb75d4-97fa-4296-b866-44cc17bcc6a3">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="0ceb941f-0e6e-489f-aad2-4be164f2cff0" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="18bfb281-97de-486d-860d-30519f0f7e5d" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a959d07c-4320-4f46-99ec-9cddc4b89b55" />
+          </operation>
+          <operation Id="92e0734f-b2f7-4c9d-95a4-d6a2f93c5e39" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d0f918b-a551-41bc-a535-820d9c28c388" />
+          </operation>
+          <operation Id="a5eb1e16-3647-4cb1-8233-ecc71125e34c" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="49c17e78-6622-42b5-a38d-986845cbd923" />
+          </operation>
+          <operation Id="87005154-41b9-4c78-93b9-3b367821f847" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fc8eb862-c298-4c93-a176-635318208f56" />
+          </operation>
+          <operation Id="2ed43355-eed2-463c-8baf-9569b52a17de" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0bc56899-3c9b-44b8-8425-6f548ac2bf8e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1cf6acb6-ec9c-4f15-b33f-803b9d4453d0" name="Feet" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="61bc30da-df32-462a-95a1-6a4caa87ed81" />
+        <suppliersInternal>
+          <interfaceRealization Id="10e48345-4544-4af9-b322-82114b957bfe">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="a63390ec-92ad-48bf-9d60-8c4b0237a9f4" />
+          </interfaceRealization>
+          <interfaceRealization Id="ead2f3cf-73c8-4eef-9105-45b927f4b37a">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="7e1178bf-313d-4528-b947-5ead0e1f9ad9" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="e026666a-b7a0-4b77-8fb3-3c7fbaa56b8d" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52f91596-461f-479b-af80-4e7ef28142b8" />
+          </operation>
+          <operation Id="1edbf890-b526-45c3-ba76-909824d805da" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c7fae726-af47-474c-beab-de1459b9909a" />
+          </operation>
+          <operation Id="e6b51fd3-2410-4cd8-bcec-e1457fe50621" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c770bbdc-13a4-464e-a98c-18261ef1ece7" />
+          </operation>
+          <operation Id="77cd3777-f703-4a3e-bf2f-9c55555ce276" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="63149dad-204f-4d64-b9ac-b19011be458e" />
+          </operation>
+          <operation Id="50107092-686f-4c26-bf21-9846f797e43c" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="766f8743-0362-4d02-a7f5-ea9fe5ea577b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ae3efecd-bcb8-43c7-9ac7-e5aca0569fc4" name="Chest" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0d2721ce-c7df-4fd5-8b81-1c71f0c20519" />
+        <suppliersInternal>
+          <interfaceRealization Id="35b2f614-8910-4c31-87f7-548e60041fe8">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="491950d0-64ed-4cca-bf92-3ea743a22f51" />
+          </interfaceRealization>
+          <interfaceRealization Id="cf5fcf79-bda3-4f36-a22c-8281dc033975">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="dedb4948-6016-4323-a1f8-4f8af798fdd1" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="1c48cd6c-a1c6-4750-a348-5c9ccec1f192" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="20a0ad1d-b135-4896-ba51-14b381466f0d" />
+          </operation>
+          <operation Id="986fffd8-527f-4de1-bc7c-3675b0c6a3c7" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="487470e2-fee1-444b-b7e1-ec6b3489c6ac" />
+          </operation>
+          <operation Id="6470b46f-d69e-43be-91af-4b689f2c595d" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cd388d3c-0c9d-4f2d-8807-d7d6e6cc78f6" />
+          </operation>
+          <operation Id="1e6d0523-e554-40ae-b94a-59878dd20a58" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b8414b61-092b-45eb-9b85-9487dd0dbe73" />
+          </operation>
+          <operation Id="a3729aa0-97bc-4e92-914a-4bed0c9dabbc" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="554c63b2-c1e4-4b09-a91f-defd3d1624f2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="30231811-b565-49e2-9384-b6202eead3af" name="Glove" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="61c8f3b3-9fa9-46ae-804f-f9413e65bf70" />
+        <suppliersInternal>
+          <interfaceRealization Id="d0aca0ee-0c13-4272-afd2-d61465228973">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="d797fa25-2ada-4b02-8454-b001112e6690" />
+          </interfaceRealization>
+          <interfaceRealization Id="956c6e95-1af3-4252-8360-d5699f5cb046">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="9220457b-4cb9-405e-9d7a-844ee850b807" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="8ea48ae4-4581-4e5a-b618-0dc111aea1a9" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2082d908-adc6-4a82-a787-7f46f37cdf99" />
+          </operation>
+          <operation Id="c34bd9b9-0af2-4594-a2dc-904a3d98550d" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8d805c88-67c5-499d-b17f-fc413eb4b2c8" />
+          </operation>
+          <operation Id="93d6eb90-cedd-45d2-a0c1-1915e4f7621d" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0087479b-c394-4f94-a3e6-cc5a492f19bf" />
+          </operation>
+          <operation Id="942b4ee0-de53-41f9-ac34-04a90b65c5e1" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ff28cfc5-5f1a-4abb-a3e9-993b6ebf16ce" />
+          </operation>
+          <operation Id="81a62ddf-cb2a-44c4-b525-af5870ca78ea" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1897548b-b9c2-4582-8685-60542172c9af" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="095c74f1-f30b-48cb-95db-434a86007861" name="Hat" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c9d8b520-9cc2-4f76-9796-2f1c5ba8a54f" />
+        <suppliersInternal>
+          <interfaceRealization Id="e1f508c1-87c0-4d42-8356-a107121447cf">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="4c320365-7adb-4a8a-b7da-7aa3b6b88813" />
+          </interfaceRealization>
+          <interfaceRealization Id="e79c20e7-5353-4cba-aa2b-e3a318304540">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="2ad92aea-d563-40c9-b97b-0de7bc72ce75" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="9e365ba3-81a9-455d-b447-ae3b1851e75d" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="04909228-938e-42ac-9360-63059a7f1d67" />
+          </operation>
+          <operation Id="6dd9cd78-20d2-4f59-a474-24fdf53151a6" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5434c91f-1c3e-4264-8a4e-e2de5bb6443f" />
+          </operation>
+          <operation Id="67974376-b13e-481d-9743-c1f3ebea8619" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fd43b0b2-460d-499e-bf91-0f636722d3bd" />
+          </operation>
+          <operation Id="d987620b-4b7e-4c27-b718-cf1452677fd1" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="196400c8-7fc9-47c2-b0e7-164a8abd6718" />
+          </operation>
+          <operation Id="1bb647ea-d9a7-4a7f-824e-2d8033e41cdb" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6cac7de2-306f-4043-9b75-defcc77aaa28" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="033cd70f-d065-49c5-baef-b29101918c89" name="Ring" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a8a1dd5e-685e-47cf-b355-bfac1be6f38e" />
+        <suppliersInternal>
+          <interfaceRealization Id="3308a6cd-7032-400a-8d1c-5a5d7dbf72a0">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="eae6ef78-ae78-4bb8-b82c-fcc28f874680" />
+          </interfaceRealization>
+          <interfaceRealization Id="b41bb3e1-0c4b-45a0-ad79-91a7cab5224a">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="608e04da-0fc7-4332-8424-4a83ed1d99f2" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="739f79fe-f212-4a52-9511-c0d53224f8fa" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2dc1db64-b80c-4c87-baf4-5e498bcb6d20" />
+          </operation>
+          <operation Id="a7b90e6c-7eab-4b77-9814-243d994af841" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c7480f33-2e4a-4949-9b7b-ac4523067454" />
+          </operation>
+          <operation Id="8a8af685-a90a-42f5-88e5-747128e30a39" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27e2de0b-68da-490e-aa61-6b2d3964f162" />
+          </operation>
+          <operation Id="5b3191a7-9fab-43e0-9691-985fa0089bdd" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec12ae7c-6be4-4d4e-b7af-b789dfca04d3" />
+          </operation>
+          <operation Id="0428d66b-e597-4798-968d-bedac05d81f0" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dfb5a43c-3b2c-4211-b7ae-7123f87d03a0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9792a9d0-1237-43c1-86b6-84c565c5584d" name="Belt" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5c42b86c-9827-4cc4-9245-d71584584d29" />
+        <suppliersInternal>
+          <interfaceRealization Id="fca3bbe5-81a7-46b2-89ef-e0b7000522de">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="04e8addf-2eb3-46c0-9ec5-2f76c19690fc" />
+          </interfaceRealization>
+          <interfaceRealization Id="ff44863c-029f-42e6-b293-d621680d6753">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="b69cae0f-5859-4978-a682-63936b4b8433" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="4ceda8e2-64d6-4818-adbd-514df8def9b5" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e38ceda-337d-4d52-8284-c36c1bf3946e" />
+          </operation>
+          <operation Id="c2abe10f-cad3-4bfa-8cc3-817300537dfe" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6d888cb0-12c2-45c5-ba4a-aac9f813e515" />
+          </operation>
+          <operation Id="cadca8d4-abf7-459a-8cf9-21b5d418f740" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="84e4171e-585c-40e9-81f9-8b34051957b3" />
+          </operation>
+          <operation Id="6fc920dc-2927-4f55-a28d-8b250d99bfa4" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fbf48697-cc1f-4b9f-95d8-6a1c047c4935" />
+          </operation>
+          <operation Id="86595ea5-e16e-4954-bf99-f5f19f8951da" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d7a87963-5a5e-4d6e-ba86-847250fdc23d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3bb96639-23c1-4247-894b-98e37dc6f3a8" name="Neck" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="53bc87c6-f0b0-4c36-9579-bdcd61621f2e" />
+        <suppliersInternal>
+          <interfaceRealization Id="8ee4d712-52ec-4714-9e4e-4bf4072f5e0c">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="d4cfa51b-b20d-4b43-b94e-9ccc9ade8b19" />
+          </interfaceRealization>
+          <interfaceRealization Id="faad4fa9-f248-48da-898e-c8371a2ed3d0">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="8e253030-89b8-45f7-953f-74f51176848e" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="4cc43caa-ddb3-470a-9ca0-352e6f4f0dec" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b870afee-6952-4fe7-9e8e-6c48474a2f12" />
+          </operation>
+          <operation Id="a6114598-ff6b-4661-9543-3c9a39492121" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b187e1f0-5306-41b4-8b55-817bd037fad6" />
+          </operation>
+          <operation Id="0105b941-9e6c-446e-af78-8296ea5b3d29" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53663010-2902-4325-8701-d2e08f449acc" />
+          </operation>
+          <operation Id="18752924-60eb-49bb-80e1-2ead72ff229f" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5bac347f-50a6-44f0-9153-e8d7933a5260" />
+          </operation>
+          <operation Id="b0ba2b07-f32a-43bc-971b-8fc0c2290293" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="58f22f80-7256-44d5-924f-82e570616cea" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="06d4a005-3943-4f29-96aa-292470ef9199" name="Face" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="be013984-05ca-4d93-ad22-630e88437554" />
+        <suppliersInternal>
+          <interfaceRealization Id="b1065dfc-f6a5-4c29-8db9-f930b18a7419">
+            <interfaceMoniker Id="5ef7cc9d-da26-4efd-8bcb-5472c522b88e" LastKnownName="Renderable" />
+            <elementDefinition Id="7589871b-5c5c-41f1-97f0-dfa1bfbd6149" />
+          </interfaceRealization>
+          <interfaceRealization Id="51f1390d-4975-41e9-b180-5ab7c030ab18">
+            <interfaceMoniker Id="e94e191f-2ea5-46e9-9144-ff0a01c37fbf" LastKnownName="Item" />
+            <elementDefinition Id="a846358e-18e8-40b1-abc8-6fad0e05463e" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="d5f3fe13-0e5e-4b45-b2a7-3842583012f2" name="void render" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="da9e2c6f-7490-436f-8163-20fb21c455e8" />
+          </operation>
+          <operation Id="74b2abb0-9c93-4f93-ac4d-7aa81477544e" name="void tick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cd267ef9-eb72-447d-bacc-9e1d65ce80f9" />
+          </operation>
+          <operation Id="01e65831-04f3-42ed-a881-36056522afde" name="void pickUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba40d628-24e9-4a8c-a058-f8ad399a50bd" />
+          </operation>
+          <operation Id="b73bba41-7157-4ec3-88c1-39e6fe2316ea" name="void drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dd69958d-ac44-4b3f-b8a6-34acc6cecbd6" />
+          </operation>
+          <operation Id="2a3c7d71-a9df-4636-9157-afa4115d7979" name="void equip" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0098f110-086f-4e8f-afae-a5290f8d66c6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="6de110f3-e271-4fe9-be09-c938530c1489" name="Stat Holder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="093179f6-7c78-49b5-b8e8-d0196f124e18" />
+        <ownedAttributes>
+          <property Id="68ae1111-8c99-4eaf-8759-28585923fc4e" name="int Agility" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f6fec41f-2b4a-4c84-b965-b1dd9e996ab2" />
+          </property>
+          <property Id="41746c48-4680-4179-a694-fbd549307486" name="int Inteligence" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33384bac-8e10-46e9-8ab0-e7d3c1f76a13" />
+          </property>
+          <property Id="78adb9ca-33f3-4896-974f-403e1692ebfb" name="int Luck" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="06d77922-d40b-4f81-b8bd-729696f59727" />
+          </property>
+          <property Id="6f308cf3-1d71-40f3-82bb-79b9d4a85768" name="int Strength" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8a3d4656-991c-4375-974c-f24f5d1cb3e6" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="554f5a12-c21b-4fdc-93d1-51fa1590684e" name="Attackable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="784273a6-3b2c-44f6-a207-30f74e80a32e" />
+        <ownedOperations>
+          <operation Id="6dc875d7-c294-4c14-b60c-23849dce4bed" name="void attack" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28f80332-09bd-4c07-882f-eb13d280d1eb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f519c5e6-eb89-48ea-bb6a-f4fb1fc909fd" name="Attackable attacker" direction="In" isUnique="false">
+                  <elementDefinition Id="5fb65f89-8a10-4755-b162-88c3e967cefd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e2a2ef49-7221-493f-8cb8-fde4ea902e91" name="Attackable target" direction="In" isUnique="false">
+                  <elementDefinition Id="59889796-ae0f-4ccd-97f9-d05c9e8f6f45" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="b650225f-5550-4f87-87b9-0ed6a4a9fd8e" name="QQ Game UML Diagram">
+    <elementDefinition Id="6270234c-07be-4a6f-ab76-7be84d19b00c" />
+  </package>
+</logicalClassDesignerModel>
